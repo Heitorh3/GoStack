@@ -51,7 +51,6 @@ const find = arr.find(function(item){
 });
 
 console.log(find);
-*/
 
 const arr = [1, 3, 4, 5, 8, 9];
 
@@ -63,4 +62,31 @@ const teste = () => {
     return 'Teste';
 }
 
-console.log(teste());
+const soma = (a = 2, b = 5) => a + b;
+
+console.log(soma(1));
+console.log(soma());
+*/
+
+const usuario = {
+    nome: 'Heitor Neto',
+    idade: 34,
+    endereco: {
+        cidade: 'Uberlandia',
+        estado: 'Minas Gerais'
+    }
+}
+
+function mostraNome({nome, idade}){
+    console.log(nome, idade);
+}
+
+console.log(usuario);
+
+const {nome, idade, endereco: {cidade}} = usuario;
+console.log(nome);
+console.log(idade);
+console.log(cidade);
+
+mostraNome(usuario);
+

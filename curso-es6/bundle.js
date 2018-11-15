@@ -68,17 +68,44 @@ const find = arr.find(function(item){
 });
 
 console.log(find);
+
+const arr = [1, 3, 4, 5, 8, 9];
+
+const newArr = arr.map(item => item * 2);
+
+console.log(newArr);
+
+const teste = () => {
+    return 'Teste';
+}
+
+const soma = (a = 2, b = 5) => a + b;
+
+console.log(soma(1));
+console.log(soma());
 */
 
 
-var arr = [1, 3, 4, 5, 8, 9];
-var newArr = arr.map(function (item) {
-  return item * 2;
-});
-console.log(newArr);
-
-var teste = function teste() {
-  return 'Teste';
+var usuario = {
+  nome: 'Heitor Neto',
+  idade: 34,
+  endereco: {
+    cidade: 'Uberlandia',
+    estado: 'Minas Gerais'
+  }
 };
 
-console.log(teste());
+function mostraNome(_ref) {
+  var nome = _ref.nome,
+      idade = _ref.idade;
+  console.log(nome, idade);
+}
+
+console.log(usuario);
+var nome = usuario.nome,
+    idade = usuario.idade,
+    cidade = usuario.endereco.cidade;
+console.log(nome);
+console.log(idade);
+console.log(cidade);
+mostraNome(usuario);
