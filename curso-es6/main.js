@@ -76,7 +76,8 @@ const usuario = {
         estado: 'Minas Gerais'
     }
 }
-
+const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+/*
 function mostraNome({nome, idade}){
     console.log(nome, idade);
 }
@@ -89,4 +90,32 @@ console.log(idade);
 console.log(cidade);
 
 mostraNome(usuario);
+*/
 
+//REST
+const {nome, ...resto} = usuario;
+console.log(nome);
+console.log(resto);
+
+const [a, b, c, ...d] = arr;
+console.log(a);
+console.log(b);
+console.log(c);
+console.log(d);
+
+
+function soma(...params){
+    return params.reduce((total, next) => total + next );
+}
+
+console.log(soma(1,2,3,4));
+
+//SPREAD
+const arr1 = [1, 2, 3];
+const arr2 = [4, 5, 6];
+
+const arr3 = [...arr1, ...arr2];
+console.log(arr3);
+
+const usuario1 = {...usuario, nome: 'Joao de Deus'};
+console.log(usuario1);
