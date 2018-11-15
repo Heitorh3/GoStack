@@ -24,7 +24,7 @@ document.getElementById('showTodo').onclick = function() {
     var div = document.getElementById('display');
     div.innerText = "<h1>" + todo.showTodo() +"</h1>"+ "\n";
 } 
-*/
+
 
 const arr = [1, 3, 4, 5, 8, 9];
 
@@ -51,3 +51,16 @@ const find = arr.find(function(item){
 });
 
 console.log(find);
+*/
+
+const arr = [1, 3, 4, 5, 8, 9];
+
+const newArr = arr.map(item => item * 2);
+
+console.log(newArr);
+
+const teste = () => {
+    return 'Teste';
+}
+
+console.log(teste());
