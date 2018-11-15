@@ -6,19 +6,38 @@ function _defineProperties(target, props) { for (var i = 0; i < props.length; i+
 
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
 
-var Alert =
+var TodoList =
 /*#__PURE__*/
 function () {
-  function Alert() {
-    _classCallCheck(this, Alert);
+  function TodoList() {
+    _classCallCheck(this, TodoList);
+
+    this.todo = [];
   }
 
-  _createClass(Alert, [{
-    key: "showAlert",
-    value: function showAlert() {
-      alert("Seja bemvindo ao curso de ES6 ");
+  _createClass(TodoList, [{
+    key: "addTodo",
+    value: function addTodo() {
+      this.todo.push("Todo");
+    }
+  }, {
+    key: "showTodo",
+    value: function showTodo() {
+      console.log(this.todo);
+      return this.todo;
     }
   }]);
 
-  return Alert;
+  return TodoList;
 }();
+
+var todo = new TodoList();
+
+document.getElementById('addTodo').onclick = function () {
+  todo.addTodo();
+};
+
+document.getElementById('showTodo').onclick = function () {
+  var div = document.getElementById('display');
+  div.innerText = "<h1>" + todo.showTodo() + "</h1>" + "\n";
+};
