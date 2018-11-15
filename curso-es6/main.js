@@ -1,3 +1,5 @@
+import { multiplicacao } from './funcoes';
+
 class TodoList {
 
     constructor(){
@@ -119,3 +121,5 @@ console.log(arr3);
 
 const usuario1 = {...usuario, nome: 'Joao de Deus'};
 console.log(usuario1);
+
+console.log(`2 x 2 = ${multiplicacao(2,2)}`);
