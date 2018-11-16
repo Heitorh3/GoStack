@@ -128,3 +128,21 @@ console.log(`2 x 2 = ${multiplicacao(2,2)}`);
 
 console.log(`3 + 3 = ${soma(3,3)}`);
 */
+
+const minhaPromisse = () => new Promise((resolve,reject) => {
+    setTimeout(() => {
+        resolve('ok')
+    }, 2000);
+});
+
+minhaPromisse().then(response => {
+    console.log(response);
+});
+
+async function executaPromisse(){
+    const response = await minhaPromisse();
+    alert(response);
+    //console.log(response);
+}
+
+executaPromisse();
