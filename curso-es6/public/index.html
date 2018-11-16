@@ -4,15 +4,55 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Primeira aula</title>
+
+    <style>
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif;
+        }
+        li {
+            clear: both;
+            margin-top: 20px;
+        }
+        img {
+            width: 80px;
+            float: left;
+            margin-right: 20px
+        }
+        strong {
+            font-size: 20px;
+        }
+        p {
+            margin: 5px 0;
+        }
+    </style>
 </head>
 <body>
-    <button id="addTodo">Adicionar</button>
-    <br>
-    <button id="showTodo">Mostrar</button>
-    <br>
-    <div id="display">
+    <form id="repo-form">
+        <input type="text" id="repository"/>
+        <button id="addTodo" type="submit">Adicionar</button>
+    </form>
+    
+    <ul id="repo-list">
+        <li>
+            <img src="https://avatars0.githubusercontent.com/u/28929274?v=4"/>
+            <strong>rocketseat.com.br</strong>
+            <p>Tire a sua ideia do papel</p>
+            <a href="https://github.com/Heitorh3/GoStack" translate="blank">Acessar</a>
+        </li>
+    </ul>
 
-    </div>
+    <ul id="repo-list">
+        <li>
+            <img src="https://avatars0.githubusercontent.com/u/28929274?v=4"/>
+            <strong>rocketseat.com.br</strong>
+            <p>Tire a sua ideia do papel</p>
+            <a href="https://github.com/Heitorh3/GoStack" translate="blank">Acessar</a>
+        </li>
+    </ul>
+    
     <script src="./bundle.js"></script>
 </body>
 </html>
