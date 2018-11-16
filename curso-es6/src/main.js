@@ -1,5 +1,6 @@
-import { multiplicacao } from './functions/funcoes';
-import soma from './functions/soma';
+/*
+import { multiplicacao } from '../functions/funcoes';
+import soma from '../functions/soma';
 
 class TodoList {
 
@@ -16,7 +17,7 @@ class TodoList {
         return this.todo;
     }
 }
-/*
+
 const todo = new TodoList();
 
 document.getElementById('addTodo').onclick = function() {
@@ -69,7 +70,7 @@ const soma = (a = 2, b = 5) => a + b;
 
 console.log(soma(1));
 console.log(soma());
-*/
+
 
 const usuario = {
     nome: 'Heitor Neto',
@@ -80,7 +81,7 @@ const usuario = {
     }
 }
 const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9];
-/*
+
 function mostraNome({nome, idade}){
     console.log(nome, idade);
 }
@@ -93,7 +94,7 @@ console.log(idade);
 console.log(cidade);
 
 mostraNome(usuario);
-*/
+
 
 //REST
 const {nome, ...resto} = usuario;
@@ -126,3 +127,4 @@ console.log(usuario1);
 console.log(`2 x 2 = ${multiplicacao(2,2)}`);
 
 console.log(`3 + 3 = ${soma(3,3)}`);
+*/
