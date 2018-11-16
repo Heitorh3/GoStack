@@ -1,4 +1,5 @@
-import { multiplicacao } from './funcoes';
+import { multiplicacao } from './functions/funcoes';
+import soma from './functions/soma';
 
 class TodoList {
 
@@ -123,3 +124,5 @@ const usuario1 = {...usuario, nome: 'Joao de Deus'};
 console.log(usuario1);
 
 console.log(`2 x 2 = ${multiplicacao(2,2)}`);
+
+console.log(`3 + 3 = ${soma(3,3)}`);
