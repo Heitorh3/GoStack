@@ -23,21 +23,39 @@ class App {
             return;
         }
 
-        const response = await api.get(`search/repositories?q=${repoName}`);
-        //const response = await api.get(`user/repos/${repoName}`);
-        //const {name, description, html_url, owner: {avatar_url}} = response.data;
-        
-        console.log(response.data);
-        
-        this.repositories.push({
-            name,
-            description,
-            avatar_url,
-            html_url,
-        });
-        this.render();
+        this.setLoading();
+
+        try{
+            const response = await api.get(`search/repositories?q=${repoName}`);
+            //const response = await api.get(`user/repos/${repoName}`);
+            //const {name, description, html_url, owner: {avatar_url}} = response.data;
+            
+            console.log(response.data);
+            
+            this.repositories.push({
+                name,
+                description,
+                avatar_url,
+                html_url,
+            });
+            this.render();
+        }catch(error){
+            alert('Nao foi possivel locar o repositorio');
+        }
+        this.setLoading(false);
     }
 
+    setLoading(loading = true){
+        if(loading === true){
+            let loadingEL = document.createElement('span');
+            loadingEL.appendChild(document.createTextNode('loading'));
+            loadingEL.setAttribute('id','loading');
+
+            this.formEl.appendChild(loadingEL);
+        }else{
+            document.getElementById('loading').remove();
+        }
+    }
     render(){
         this.listEl.innerHTML = '';
 
