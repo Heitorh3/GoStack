@@ -8,12 +8,8 @@
     ],
     "headers":[
       {
-        "source":"./service-worker.js",
-        "headers":[
-          { 
-            "key":"cache-control","value":"no-cache"
-          }
-        ]
+        "source":"/service-worker.js",
+        "headers":[{ "key":"Cache-Control","value":"no-cache"}]
       }
     ]
   }
