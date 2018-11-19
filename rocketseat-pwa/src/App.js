@@ -14,7 +14,7 @@ class App extends Component {
       <Fragment className="App">
          <header>
            <input ref={el =>this.inputEl = el}
-                placeholder="Acionar repositorio"
+                placeholder="Adcionar repositorio"
                 onChange={e => this.setState({newRepoInput: e.target.value})}
                 value={this.state.newRepoInput}/>
 
@@ -23,7 +23,7 @@ class App extends Component {
             </button>
 
             <repositorys>
-              
+
             </repositorys>
            
          </header>
