@@ -1,13 +1,23 @@
 import React, { Component, Fragment } from 'react';
+import axios from 'axios';
+
+import {header, repositories} from './style';
 
 class App extends Component {
   state = {
-    newRepoInput: ''
-  }
+    newRepoInput: '',
+    repositories: []
+  };
   
-  addRepository(){
+  addRepository = async () =>{
+    if(!this.state.newRepoInput) return;
+    const resposta =  await axios.get(`https://github.com/repos/${this.state.newRepoInput}`);
 
-  }
+    this.setState({
+      newRepoInput: '',
+      repositories: [...this.state.repositories, resposta.data]
+    });
+  };
 
   render() {
     return (
@@ -23,7 +33,14 @@ class App extends Component {
             </button>
 
             <repositorys>
-
+              {this.state.repositories.map(repository =>(
+                <li key={repository.id}>
+                  <img src={repository.owner.avatar_url}/>
+                  <strong>{repository.name}</strong>
+                  <p>{repository.description}</p>
+                  <a href={repository.html_url}>Acessar</a>
+                </li>
+              ))}
             </repositorys>
            
          </header>
