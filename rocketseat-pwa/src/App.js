@@ -11,7 +11,7 @@ class App extends Component {
   
   addRepository = async () =>{
     if(!this.state.newRepoInput) return;
-    const resposta =  await axios.get(`https://github.com/repos/${this.state.newRepoInput}`);
+    const resposta =  await axios.get(`https://github.com/${this.state.newRepoInput}`);
 
     this.setState({
       newRepoInput: '',
