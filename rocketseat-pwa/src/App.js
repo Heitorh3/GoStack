@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import axios from 'axios';
 
-import {header, repositories} from './style';
+import {header, repositorys} from './style';
 
 class App extends Component {
   state = {
