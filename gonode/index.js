@@ -44,7 +44,7 @@ app.get('/new', (req, res) => {
 
 app.post('/create', (req, res) => {
     users.push(req.body.user);
-    
+
     return res.redirect('/');
 });
 
