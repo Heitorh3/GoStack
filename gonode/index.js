@@ -13,7 +13,7 @@ const app = express();
 const logMiddleware = (req, res, next) => {
     console.log(
         `HOST: ${req.headers.host} | URL: ${req.url} | METHOD: ${req.method}`);
-    req.appName = 'GoNode';
+    req.appName = 'GoNode...';
 
     return next();
 }
@@ -27,11 +27,17 @@ nunjucks.configure('views',{
 });
 
 app.set('view engine', 'njk');
+const users = ['Heitor Neto', 'Marcos Caetano', 'Robert de Souza Melo', 'Miguel'];
 
 app.get('/',logMiddleware, (req, res) => {
     //return res.send(`Bem vindo ao ${req.appName}, ${req.query.name}`);
     //Usando o nunjucks para renderizar o html
-    return res.render('list', { name: req.appName});
+    //return res.render('list', { name: req.appName});
+    return res.render('list', { users });
+});
+
+app.get('/new', (req, res) => {
+    return res.render('new');
 });
 
 app.get('/nome/:name',(req, res) => {
