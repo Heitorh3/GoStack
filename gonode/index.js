@@ -26,7 +26,9 @@ nunjucks.configure('views',{
     watch:true,
 });
 
+app.use(express.urlencoded({ extended: false }));
 app.set('view engine', 'njk');
+
 const users = ['Heitor Neto', 'Marcos Caetano', 'Robert de Souza Melo', 'Miguel'];
 
 app.get('/',logMiddleware, (req, res) => {
@@ -38,6 +40,12 @@ app.get('/',logMiddleware, (req, res) => {
 
 app.get('/new', (req, res) => {
     return res.render('new');
+});
+
+app.post('/create', (req, res) => {
+    users.push(req.body.user);
+    
+    return res.redirect('/');
 });
 
 app.get('/nome/:name',(req, res) => {
