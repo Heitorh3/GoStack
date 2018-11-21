@@ -22,10 +22,12 @@ class App {
       express: this.express,
       autoescape: true
     })
-    this.nunjucks.use('view engine', 'njk')
+    this.express.set('view engine', 'njk')
   }
 
-  routes () {}
+  routes () {
+    this.express.use(require('./routes'))
+  }
 }
 
 module.exports = new App().express
